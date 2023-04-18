@@ -1,15 +1,17 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MyButton from './components/myButton';
+// import MyButton from './components/myButton';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 function App() {
+  const [navbar, SetNavbar] = useState("");
   const navText = "Juniarta";
-  const navHead = "Latihan React Js"
+  const navHead = "Latihan React Js";
 
-  const clicked = ()=>{
-    return alert("Ini Tombol untuk alert");
+  const clicked = () => {
+    SetNavbar("Contact ?");
   }
 
   const letters = () => {
@@ -23,12 +25,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar textNav={navText} navHead={navHead}/>
+        <NavBar textNav={navText} navHead={navHead} navChange={navbar}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           JuniArta Kone.
         </p>
-      <MyButton clicked = {clicked}/>
+      {/* <MyButton clicked = {clicked}/> */}
+      <p>{navbar}</p>
+      <button onClick={() => clicked()}>Ini Tombol</button>
       </header>
       <Footer letters={letters}/>
     </div>

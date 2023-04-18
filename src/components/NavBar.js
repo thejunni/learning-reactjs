@@ -4,16 +4,16 @@ function NavBar(props){
             <h1>{props.navHead}</h1>
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="home">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="contact">Contact</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    {props.textNav}
                 </li>
                 <li>
-                    <a href="#">{props.textNav}</a>
+                    {!props.navChange ? "Adadeh" : props.navChange}
                 </li>
             </ul>
         </div>
